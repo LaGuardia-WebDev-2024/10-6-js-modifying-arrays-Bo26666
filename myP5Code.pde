@@ -1,5 +1,5 @@
-var xPositions = [100];
-var yPositions = [200];
+var xPositions = [100, 150, 300];
+var yPositions = [200,250,400];
 
 setup = function() {
   size(400, 400); 
@@ -9,9 +9,13 @@ draw = function(){
   background(0, 0, 0);
   drawStars();
 
-  //***in the video they use if(mouseIsPressed)
-  //***in Codespaces we use if(mousePressed)
-  
+  if(mousePressed){
+    
+    xPositions.push(mouseX);
+  yPositions.push(mouseY)
+  }
+
+
 }
 
 var drawStars = function() {
